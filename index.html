@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>VALORANT • Agent Roulette</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">VALORANT</div>
+    <div class="subtitle">AGENT ROULETTE</div>
+</header>
+
+<main class="container">
+
+    <section class="roulette-section">
+        <div class="roulette-frame">
+            <div class="indicator"></div>
+            <div class="roulette">
+                <div class="track" id="track"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="controls">
+        <button id="spinBtn" class="spin-btn">▶ КРУТИТЬ</button>
+    </section>
+
+    <section class="banlist">
+        <h2>🚫 БАН ЛИСТ</h2>
+        <div id="banAgents" class="ban-grid"></div>
+    </section>
+
+    <section class="result">
+        <span id="resultText">Готово к запуску</span>
+    </section>
+
+</main>
+
+<script src="roulette.js"></script>
+</body>
+</html>
