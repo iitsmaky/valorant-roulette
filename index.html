@@ -1,43 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>VALORANT • Agent Roulette</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Valorant Agent Roulette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600&family=Teko:wght@500;600&display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero__badge">Valorant</div>
+        <h1>Agent Roulette</h1>
+      </header>
 
-<header class="header">
-    <div class="logo">VALORANT</div>
-    <div class="subtitle">AGENT ROULETTE</div>
-</header>
-
-<main class="container">
-
-    <section class="roulette-section">
-        <div class="roulette-frame">
-            <div class="indicator"></div>
-            <div class="roulette">
-                <div class="track" id="track"></div>
+      <main class="content">
+        <section class="roulette">
+          <div class="roulette__header">
+            <div>
+              <h2>Рулетка агентов</h2>
+              <div class="roulette__sub">Данные только с официального Valorant API</div>
             </div>
+            <div class="status" id="status">Загрузка агентов...</div>
+          </div>
+
+          <div class="roulette__body">
+            <div class="roulette__viewport" id="rouletteViewport">
+              <div class="roulette__indicator" aria-hidden="true"></div>
+              <div class="roulette__strip" id="rouletteStrip"></div>
+            </div>
+
+            <div class="roulette__controls">
+              <button class="spin-btn" id="spinBtn" type="button" disabled>Крутить</button>
+              <div class="result">
+                <div class="result__label">Результат</div>
+                <div class="result__value" id="resultText">-</div>
+              </div>
+            </div>
+
+            <div class="role-panel">
+              <div class="role-panel__title">Классы</div>
+              <div class="role-panel__list" id="roleList"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="banlist">
+          <div class="banlist__header">
+            <h3>Бан-лист агентов</h3>
+            <div class="banlist__meta" id="banMeta">Бан: 0</div>
+          </div>
+          <div class="banlist__grid" id="banGrid"></div>
+          <div class="banlist__hint">Клик по иконке — бан / разбан</div>
+        </section>
+
+        <section class="info-panel" aria-hidden="true"></section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__left">
+            <div>Made by Maky</div>
+            <div>Брендинг MAKY</div>
+          </div>
+          <a class="discord-btn" href="https://discord.com" target="_blank" rel="noopener">
+            Discord
+          </a>
         </div>
-    </section>
+      </footer>
+    </div>
 
-    <section class="controls">
-        <button id="spinBtn" class="spin-btn">▶ КРУТИТЬ</button>
-    </section>
+    <noscript>
+      <div class="noscript">
+        Для работы рулетки нужен JavaScript.
+      </div>
+    </noscript>
 
-    <section class="banlist">
-        <h2>🚫 БАН ЛИСТ</h2>
-        <div id="banAgents" class="ban-grid"></div>
-    </section>
-
-    <section class="result">
-        <span id="resultText">Готово к запуску</span>
-    </section>
-
-</main>
-
-<script src="roulette.js"></script>
-</body>
+    <script src="roulette.js"></script>
+  </body>
 </html>
